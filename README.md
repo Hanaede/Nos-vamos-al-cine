@@ -12,8 +12,9 @@ De momento, las opciones disponibles para consultar son:
    - Duración
    - Enlace a su web en IMDB
 3. Películas recomendadas si te gusta una película concreta.
-4. Obtener 5 películas "trending topic" semanal o del día.
-5. Mostrar géneros disponibles.
+4. Obtener 5 películas "trending topic" semana.
+5. Obtener 5 películas "trending topic" diario.
+6. Mostrar géneros disponibles. 
 
 ## Mejoras a futuro  
 - Implementar más opciones en el menú, como por ejemplo:
