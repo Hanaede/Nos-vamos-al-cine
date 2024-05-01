@@ -39,7 +39,7 @@ De momento, las opciones disponibles para consultar son:
 - [Andy´s Tech Tutorials canal YT](https://www.youtube.com/watch?v=FlFyrOEz2S4&t=151s&ab_channel=Andy%27sTechTutorials)
 - [Makes Sense canal YT](https://www.youtube.com/watch?v=vlenVDbJKsA&ab_channel=makessense)
 - [How to make API calls to MovieDB](https://www.youtube.com/watch?v=WSvRFYPQyko&t=1057s&ab_channel=makessense)
-- [How to set environment variables in Mac]([https://](https://www.youtube.com/watch?v=-cASjkF94dc&ab_channel=MacOSXTutorialsandAppreviewsfromHowTech))
+- [How to set environment variables in Mac](https://www.youtube.com/watch?v=-cASjkF94dc&ab_channel=MacOSXTutorialsandAppreviewsfromHowTech)
 - [Taller consumir API con Python - CodigoFacilito](https://www.youtube.com/watch?v=12NPmrdoKKs&t=4s&ab_channel=codigofacilito)
 
 ### API TMDB
