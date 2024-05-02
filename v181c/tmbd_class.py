@@ -15,7 +15,6 @@ class Tmdbclient:
     @property
     def is_internet_available(self):
         try:
-            # Intenta conectarse a google.com
             socket.create_connection(("www.google.com", 80))
             return True
         except OSError:
@@ -75,16 +74,17 @@ class Tmdbclient:
         print("Título:", movie_info_json['title'])
         for genre in movie_info_json['genres']:
             print(genre['name'], end=", ")
-        print("\b\b ")
+        print("\b\b")
         print("Argumento:", movie_info_json['overview'])
         print("Duración:", f"{movie_info_json['runtime']} minutos")
         print("Enlace a IMDb:", f"https://www.imdb.com/title/{movie_info_json['imdb_id']}")
+        # Se pueden añadir los datos que quiera buscando en la key en el diccionario
 
     # Opción 3
     def get_similar_movies(self, movie_name):
         try:
             self.internet_check()
-            movie_data = self.collect_info_movie(movie_name)  # Misma función que en la opción 1
+            movie_data = self.collect_info_movie(movie_name)  # Mismo método que en la opción 1
             self.search_similar_films(movie_data)
 
         except (requests.exceptions.HTTPError, Exception) as err:
@@ -93,7 +93,7 @@ class Tmdbclient:
     def search_similar_films(self, movie_data):
         results_movie_list = movie_data['results']
         if results_movie_list:
-            movie_id = results_movie_list[0]['id']  # id guardado de la película
+            movie_id = results_movie_list[0]['id']  # id guardado de la película introducida
 
             similar_movies = self.get_info_similar_movies(movie_id)  # Películas similares con el id anterior
 
