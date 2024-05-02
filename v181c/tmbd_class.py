@@ -1,12 +1,12 @@
 """
-Author: Enrique Mariño Jiménez
+Author: Enrique Mariño Jiménez.
 """
 import os
 import requests
 import json
 
 
-class TMDBClient:
+class Tmdbclient:
     def __init__(self):
         self.__API_KEY = os.environ.get('TMDB_API_KEY')
         self.__BASE_URL = 'https://api.themoviedb.org/3'
