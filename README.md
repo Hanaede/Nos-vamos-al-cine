@@ -28,7 +28,7 @@ De momento, las opciones disponibles para consultar son:
 - Mejorar el código modularizando y mejorando la legibilidad.
 - Controlar excepciones concretas.
 - Seguir métodos SOLID.
-- Añadir opción de filtrado por género en el trending semanal y diario.
+- [x] Añadir opción de filtrado por género en el trending semanal.
 - Hacer el programa no en una única clase.
 
  En definitiva, es un programa que puede escalar en número de opciones según las posibilidades de la API. Además, se pueden hacer versiones personalizadas para películas, series o TV.
