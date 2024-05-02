@@ -55,3 +55,5 @@ De momento, las opciones disponibles para consultar son:
  - [Géneros e ID TMDB](https://www.themoviedb.org/talk/5daf6eb0ae36680011d7e6ee)
 - [Cómo usar Postman](https://desarrolloweb.com/articulos/como-usar-postman-probar-api)
 - [Docstring](https://pywombat.com/articles/docstring-python)
+- [URL ID-Genres](https://www.themoviedb.org/talk/635968b34a4bf6007c5997f3)
+- [Discover Filter TMDB](https://developer.themoviedb.org/reference/discover-movie)
