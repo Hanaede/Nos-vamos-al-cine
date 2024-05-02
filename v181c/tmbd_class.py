@@ -72,6 +72,7 @@ class Tmdbclient:
     @staticmethod
     def print_movie_info(movie_info_json):
         print("Título:", movie_info_json['title'])
+        print("Géneros", end=": ")
         for genre in movie_info_json['genres']:
             print(genre['name'], end=", ")
         print("\b\b")
