@@ -1,7 +1,7 @@
  ![LOGO](./header.jpg)
 
 ## Funcionamiento del programa
-La idea es crear un programa que proporcione diferente tipo de información sobre películas. Para ello, se utilizará la API de [TMBD](https://www.themoviedb.org/documentation/api).
+La idea es crear un programa que proporcione diferente tipo de información sobre películas. Para ello, se utilizará la API de [TMDB](https://www.themoviedb.org/documentation/api).
 
 De momento, las opciones disponibles para consultar son:  
 1. Buscar el código de una película según su nombre.
@@ -52,3 +52,6 @@ De momento, las opciones disponibles para consultar son:
  - [Real Python](https://realpython.com/api-integration-in-python/)
  - [HTTP error](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses)
  - [Finding data TMDB](https://developer.themoviedb.org/docs/finding-data)
+ - [Géneros e ID TMDB](https://www.themoviedb.org/talk/5daf6eb0ae36680011d7e6ee)
+- [Cómo usar Postman](https://desarrolloweb.com/articulos/como-usar-postman-probar-api)
+- [Docstring](https://pywombat.com/articles/docstring-python)
