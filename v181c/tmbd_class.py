@@ -1,5 +1,5 @@
 """
-Author: Enrique Mariño Jiménez.
+Author: Enrique Mariño Jiménez
 """
 import os
 import requests
@@ -30,7 +30,7 @@ class Tmdbclient:
         params = {'api_key': self.__API_KEY, 'query': movie_name}
         return self.get_response_api(params, url)
 
-    def get_response_api(self, params, url):  # Utilizado también por collect_genres:film
+    def get_response_api(self, params, url):  # Utilizado también por collect_genres_film
         response = requests.get(url, params=params)
         response.raise_for_status()
         response_json_file = response.json()
@@ -157,6 +157,7 @@ class Tmdbclient:
                 genres_list = []
                 for genre in movie_genres_info['genres']:
                     genres_list.append(genre['name'])
+                    genres_list.append(genre['id'])
                 self.save_to_json({"Géneros disponibles": genres_list})
                 self.print_movies(genres_list)
             else:
