@@ -4,6 +4,7 @@ Author: Enrique Mariño Jiménez
 import os
 import requests
 import json
+import socket
 
 
 class Tmdbclient:
@@ -11,9 +12,23 @@ class Tmdbclient:
         self.__API_KEY = os.environ.get('TMDB_API_KEY')
         self.__BASE_URL = 'https://api.themoviedb.org/3'
 
+    @property
+    def is_internet_available(self):
+        try:
+            # Intenta conectarse a google.com
+            socket.create_connection(("www.google.com", 80))
+            return True
+        except OSError:
+            return False
+
+    def internet_check(self):
+        if not self.is_internet_available:
+            raise Exception("No hay conexión a internet")
+
     # Opción 1
     def get_id_by_movie_name(self, movie_name):
         try:
+            self.internet_check()
             movie_data = self.collect_info_movie(movie_name)
 
             results_movie_list = movie_data['results']
@@ -40,6 +55,7 @@ class Tmdbclient:
     # Opción 2
     def get_movie_info_by_id(self, movie_id):
         try:
+            self.internet_check()
             self.collect_info_move_id(movie_id)
 
         except (requests.exceptions.HTTPError, Exception) as err:
@@ -67,6 +83,7 @@ class Tmdbclient:
     # Opción 3
     def get_similar_movies(self, movie_name):
         try:
+            self.internet_check()
             movie_data = self.collect_info_movie(movie_name)  # Misma función que en la opción 1
             self.search_similar_films(movie_data)
 
@@ -101,6 +118,7 @@ class Tmdbclient:
     # Opción 4
     def get_trending_movies_week(self):
         try:
+            self.internet_check()
             week_trending_info = self.get_info_trending_week()
 
             if week_trending_info['results']:
@@ -126,6 +144,7 @@ class Tmdbclient:
     # Opción 5
     def get_trending_movies_day(self):
         try:
+            self.internet_check()
             day_trending_info = self.get_info_trending_day()
 
             if day_trending_info['results']:
@@ -151,6 +170,7 @@ class Tmdbclient:
     # Opción 6
     def get_all_genres(self):
         try:
+            self.internet_check()
             movie_genres_info = self.collect_genres_films()
 
             if movie_genres_info['genres']:
@@ -172,9 +192,9 @@ class Tmdbclient:
         return self.get_response_api(params, url)
 
     @staticmethod
-    def print_movies(movies):
-        for movie in movies:
-            print(movie)
+    def print_movies(movies_info):
+        for info in movies_info:
+            print(info)
 
     @staticmethod
     def save_to_json(data):
