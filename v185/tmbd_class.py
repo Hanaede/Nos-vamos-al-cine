@@ -147,19 +147,20 @@ class Tmdbclient:
         trending_info_week = response.json()
         return trending_info_week
 
-    def get_info_trending_by_genre(self, genre_id):
+    def get_info_trending_by_genre(self, genre_id):  # Usada también por trending_day
         trending_movies = []
         page = 1
+        number_movies = 5
         while True:
             trending_info_response = self.response_trending_by_genre(genre_id, page)
 
             if trending_info_response['results']:
-                trending_movies.extend(trending_info_response['results'][:5])
-                if len(trending_movies) >= 5:  # Si ya tenemos suficientes resultados
+                trending_movies.extend(trending_info_response['results'][:number_movies])
+                if len(trending_movies) >= number_movies:  # Si ya tenemos suficientes resultados
                     break
             else:
                 # Si no hay más resultados en la página actual, pero no hemos alcanzado el número deseado, pasamos a la siguiente página
-                if len(trending_movies) < 5:
+                if len(trending_movies) < number_movies:
                     page += 1
                 else:
                     break
@@ -177,7 +178,8 @@ class Tmdbclient:
     def get_trending_day_movies_by_genre(self):
         try:
             self.internet_check()
-            genre_id = input("Introduce el ID del género de película para obtener las películas trending (deja vacío para todos): ")
+            genre_id = input(
+                "Introduce el ID del género de película para obtener las películas trending (deja vacío para todos): ")
 
             if genre_id is None:
                 trending_info = self.get_info_trending_day()  # Obtener trending diario por defecto
